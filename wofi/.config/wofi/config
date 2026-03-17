@@ -1,0 +1,17 @@
+width=600
+height=800
+location=center
+show=drun
+prompt=Search...
+filter_rate=100
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+valign=start
+insensitive=true
+allow_images=true
+image_size=32
+dynamic_lines=true
+close_on_focus_loss=true

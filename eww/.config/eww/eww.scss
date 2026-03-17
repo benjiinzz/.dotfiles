@@ -1,0 +1,63 @@
+@import 'mocha.scss'
+
+* {
+  all: unset; // Unsets everything so you can style everything from scratch
+  font-family: "FiraCode Nerd Font Mono";
+}
+
+// Global Styles
+.bara, .barb{
+  background-color: $base;
+  color: $text;
+  padding: 10px;
+  border-radius: 5px;
+  border: 4px solid $lavender;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+  all: unset;
+  color: $mauve;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: $lavender;
+  color: $mauve;
+  border-radius: 10px;
+}
+
+.metric scale trough {
+  all: unset;
+  background-color: $surface0;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.label-ram {
+  font-size: large;
+}
+
+.workspace {
+  padding: 2px 4px;
+  color: $text;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.workspace.active {
+  background-color: $pink;
+  color: $base;
+}
+
+.workspace:hover {
+  background-color: $surface0;
+}
+
+.workspace.active:hover {
+  color: $pink;
+}
