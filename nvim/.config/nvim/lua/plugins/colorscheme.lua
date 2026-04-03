@@ -1,8 +1,6 @@
-return {
-  "catppuccin/nvim",
-  name = "catppuccin",
-  priority = 1000,
-  config = function()
-    vim.cmd.colorscheme "catppuccin-mocha"
-  end
-}
+local utils = require('utils')
+
+vim.pack.add({utils.gh('catppuccin/nvim')})
+
+vim.cmd.colorscheme('catppuccin-mocha')
+

@@ -1,5 +1,6 @@
--- Basic configuration for init.lua
---
--- Sources lazy
-require("config.lazy")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
+require("config")
+require("autocmds")
+require("plugins")
