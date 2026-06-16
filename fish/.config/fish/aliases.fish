@@ -31,3 +31,7 @@ alias gs='git status'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
+
+alias hbup='sudo hb-up'
+
+alias bns='sudo rm -rf release && docker build -t stb-hmi-builder -f Dockerfile.build . && docker run --rm -v "$(pwd)/release:/build/release" stb-hmi-builder && rsync -avz --delete release/0.5.0/linux-unpacked/ textile@192.168.31.21:~/bloomhmi/ && ssh textile@192.168.31.21 "sudo reboot"'

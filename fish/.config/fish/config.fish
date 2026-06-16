@@ -1,4 +1,5 @@
 source ~/.config/fish/aliases.fish
+ssh-agent-start
 source ~/.config/fish/path.fish
 
 if command -v mise &> /dev/null

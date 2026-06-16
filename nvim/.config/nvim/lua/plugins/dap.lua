@@ -38,3 +38,24 @@ vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "[D]ebug [O]ver" })
 vim.keymap.set("n", "<leader>dO", dap.step_out, { desc = "[D]ebug [O]ut" })
 vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "[D]ebug [U]I toggle" })
 vim.keymap.set("n", "<leader>dt", dap.terminate, { desc = "[D]ebug [T]erminate" })
+
+dap.configurations.rust = {
+	{
+		name = "Launch",
+		type = "codelldb",
+		request = "launch",
+		program = function()
+			local path = vim.fn.expand("%:p:h")
+			while path ~= "/" do
+				if vim.fn.filereadable(path .. "/Cargo.toml") == 1 then
+					local name = vim.fn.fnamemodify(path, ":t")
+					return path .. "/target/debug/" .. name
+				end
+				path = vim.fn.fnamemodify(path, ":h")
+			end
+			return vim.fn.input("Binary not found , enter path: ")
+		end,
+		cwd = "${workspaceFolder}",
+		stopOnEntry = false,
+	},
+}
