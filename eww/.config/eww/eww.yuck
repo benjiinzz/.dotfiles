@@ -17,7 +17,7 @@
             :onchange "")
     time))
 (defpoll active_workspace :interval "100ms"
-  "hyprctl activeworkspace -j | jq -r '.id'")
+  "hyprctl activeworkspace -j | sed -n 's/.*\"id\":[[:space:]]*\\([^,}]*\\).*/\\1/p'")
 
 (defwidget workspaces []
   (box :class "workspaces" 
